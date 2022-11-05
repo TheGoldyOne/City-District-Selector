@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(44, 44, 44);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 800px;
+    height: 800px;
+    background-color: rgb(29, 29, 29);
+    border-radius: 15px;
+    position: relative;
+    padding: 2rem;
+}
+
+#title {
+    position: absolute;
+    right:0;
+    bottom: 0;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.container>svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:100%;
+    height: auto;
+}
+
+path {
+    fill: red;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+/* 
+path:hover {
+    fill: blue;
+    content: "test";
+} */
+
+path[data-active="true"] {
+    fill: rgb(22, 193, 22);
+}
