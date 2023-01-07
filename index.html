@@ -44,11 +44,11 @@
 
       <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
       <script>
-        $(document).mouseover((e) => {
-          if ($(e.target).attr("data-name") != undefined) {
-            $("#title").html($(e.target).attr("data-name"));
-          }
-        });
+        // $(document).mouseover((e) => {
+        //   if ($(e.target).attr("data-name") != undefined) {
+        //     $("#title").html($(e.target).attr("data-name"));
+        //   }
+        // });
 
         let ids = [
           "slawin",
@@ -87,8 +87,25 @@
             } else {
               e.target.dataset.active = "false"
             }
+            updateSelected();
           });
         });
+
+
+
+        function updateSelected() {
+          let selected = [];
+          ids.forEach((e) => {
+            if ($(`#${e}`).attr("data-active") == "true") {
+              selected.push($(`#${e}`).attr("data-name"));
+            }
+          });
+          $("#title").html(selected.join(", "));
+        }
+
+
+
+
       </script>
     </div>
   </body>
